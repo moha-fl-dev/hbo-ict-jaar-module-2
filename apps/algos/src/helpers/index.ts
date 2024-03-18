@@ -12,3 +12,7 @@ export function generateInput(min: number = 0, max: number): number[] {
   }
   return output;
 }
+
+export function randomIndex(arr: number[]): number {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
