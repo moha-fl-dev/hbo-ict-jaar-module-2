@@ -1,15 +1,18 @@
+import { inject, injectable } from "inversify";
 import { Logger } from "../domainServices/logger";
 import { generateRandomId } from "../utils/utils";
-import { Coordinate } from "./coordinate";
-import { Frame } from "./frame";
+import type { Coordinate } from "./coordinate";
+import type { Frame } from "./frame";
+import { TYPES } from "../IoC";
 
+@injectable()
 export abstract class Shape {
   #ID: string = "";
 
   constructor(
     private frame: Frame,
     private coordinates: Coordinate,
-    private logger: Logger
+    @inject(TYPES.Logger) private logger: Logger
   ) {
     this.#ID = generateRandomId();
 

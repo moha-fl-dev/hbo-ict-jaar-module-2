@@ -1,3 +1,5 @@
+import { injectable } from "inversify";
+
 export enum LogLevel {
   INFO = "INFO",
   WARN = "WARN",
@@ -10,6 +12,7 @@ const logLevelsWithColor: Record<LogLevel, string> = {
   ERROR: "color: red",
 };
 
+@injectable()
 export class Logger {
   constructor(private logLevel: LogLevel = LogLevel.INFO) {}
 

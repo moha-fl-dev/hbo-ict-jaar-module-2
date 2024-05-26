@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react";
+import { container } from "./core/IoC";
+import { createRectangle } from "./core/IoC/factories";
 
 function App() {
   return (
