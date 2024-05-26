@@ -53,7 +53,6 @@ function CanvasElement() {
         ctx.drawImage(img, 0, 0);
         DOMURL.revokeObjectURL(url);
       });
-      console.log({ url });
       img.src = url;
     };
 
